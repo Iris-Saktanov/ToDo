@@ -5,18 +5,25 @@ export default function Tasks({
   tasks,
   handleChecked,
   handleDelete,
+  handleEdit,
+  edit,
+  setEdit,
+  handleAddChanges,
 }: TasksList) {
   return (
-    <>
-      <ul>
-        {tasks.map((task) => (
-          <Task
-            task={task}
-            handleChecked={handleChecked}
-            handleDelete={handleDelete}
-          />
-        ))}
-      </ul>
-    </>
+    <ul>
+      {tasks.map((task) => (
+        <Task
+          key={task.id}
+          task={task}
+          handleChecked={handleChecked}
+          handleDelete={handleDelete}
+          handleEdit={handleEdit}
+          edit={edit}
+          setEdit={setEdit}
+          handleAddChanges={handleAddChanges}
+        />
+      ))}
+    </ul>
   );
 }
